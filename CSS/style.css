@@ -1,0 +1,107 @@
+:root {
+    --bg-site: #f4f7f6;
+    --bg-card: #ffffff;
+    --side-bg: #2c3e50;
+    --text: #2c3e50; /* Gris foncé pour contraste WCAG */
+    --accent: #2980b9;
+    --bar-empty: #ecf0f1;
+}
+
+body.dark-mode {
+    --bg-site: #121212;
+    --bg-card: #1e1e1e;
+    --text: #f0f0f0;
+    --bar-empty: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--bg-site);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+}
+
+#wrapper { width: 95%; max-width: 1050px; margin: 20px auto; display: flex; flex-direction: column; }
+
+header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+
+/* --- ANIMATION DU NOM --- */
+#mon-nom span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s ease-out;
+}
+#mon-nom.visible span {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Génération automatique de délais pour les 15 premières lettres */
+#mon-nom span:nth-child(n) { transition-delay: calc(0.05s * n); }
+
+.btns button { background: var(--bg-card); border: 1px solid #ccc; padding: 10px; cursor: pointer; border-radius: 8px; color: var(--text); transition: 0.3s; width: 45px; height: 45px; }
+.btns button:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+#cv-card {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar { background: var(--side-bg); color: white; padding: 35px 25px; }
+.photo-container img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid white; display: block; margin: 0 auto 25px; object-fit: cover; }
+.side-block { margin-bottom: 30px; }
+.side-block h3 { font-size: 0.85rem; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: 12px; padding-bottom: 5px; color: #3498db; }
+.contact-item { font-size: 0.85rem; margin-bottom: 8px; }
+.contact-item a { color: #3498db; text-decoration: none; border-bottom: 1px solid transparent; }
+.contact-item a:hover { border-bottom: 1px solid #3498db; }
+
+/* Barres */
+.skill-bar { margin-bottom: 15px; }
+.skill-info { display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 4px; }
+.bar-bg { background: rgba(255,255,255,0.15); height: 7px; border-radius: 10px; }
+.main-skill .bar-bg { background: var(--bar-empty); }
+.bar-fill { background: var(--accent); height: 100%; width: 0; border-radius: 10px; }
+
+/* Main */
+.main-body { padding: 40px; }
+.info-group { margin-bottom: 30px; }
+.info-group h2 { color: var(--accent); font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid var(--bar-empty); padding-bottom: 8px; }
+.exp-item { margin-bottom: 18px; border-left: 3px solid var(--accent); padding-left: 15px; }
+.exp-row { display: flex; justify-content: space-between; font-weight: bold; }
+.company { color: var(--accent); font-size: 0.9rem; margin: 2px 0 5px 0; }
+.desc { font-size: 0.95rem; line-height: 1.5; }
+
+footer { text-align: center; font-size: 0.8rem; padding: 20px; opacity: 0.6; }
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    #cv-card { grid-template-columns: 1fr; }
+    #wrapper { width: 100%; padding: 10px; }
+    .main-body { padding: 25px; }
+}
+
+/* --- PRINT OPTIMISATION --- */
+@media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: white; }
+    .no-print { display: none !important; }
+    #cv-card { 
+        box-shadow: none; border: 1px solid #ddd; 
+        grid-template-columns: 200px 1fr; 
+        height: auto; width: 100%;
+    }
+    .sidebar { background-color: #2c3e50 !important; -webkit-print-color-adjust: exact; color: white !important; }
+    .bar-fill { background-color: #2980b9 !important; -webkit-print-color-adjust: exact; }
+    /* Force l'affichage du nom sans animation pour le PDF */
+    #mon-nom span { opacity: 1 !important; transform: none !important; color: #2980b9 !important; }
+}
