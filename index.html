@@ -2,110 +2,107 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="author" content="Sébastien Dupont">
-    <meta name="description" content="">
+    <title>CV - Amr Jaddad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
-    <div id="wrapper">
-        <header class="no-print">
-            <h1 id="mon-nom">Amr Jaddad</h1>
-            <div class="btns">
-                <button id="dark-toggle" aria-label="Mode sombre" title="Basculer le mode sombre"><i class="fas fa-moon"></i></button>
-                <button id="print-now" aria-label="Imprimer" title="Imprimer le CV"><i class="fas fa-print"></i></button>
+    <div id="page-cv">
+        <header id="barre-haute">
+            <div class="titre-principal">
+                <h1>Amr Jaddad</h1>
+                <p>Étudiant en Informatique | Option Développement</p>
+            </div>
+            <div class="actions no-print">
+                <button id="btn-theme" title="Mode Sombre/Clair"><i class="fas fa-moon"></i></button>
+                <button id="btn-print" title="Imprimer"><i class="fas fa-print"></i></button>
             </div>
         </header>
 
-        <main id="cv-card">
-            <aside class="sidebar">
-                <div class="photo-container">
-                    <img src="IMG/Profil.jpg" alt="Portrait de Amr Jaddad">
+        <main id="contenu-cv">
+            <aside id="menu-lateral">
+                <div class="photo-profil">
+                    <img src="IMG/profil.png" alt="Amr Jaddad">
                 </div>
-                
-                <section class="side-block">
+
+                <section class="section-gauche">
                     <h3>Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> amrjaddad2002@gmail.com</div>
-                    <div class="contact-item"><i class="fas fa-phone"></i> +32 479 75 00 12</div>
-                    <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/amr-jaddad-605737395/" target="_blank">LinkedIn</a></div>
-                    <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/amrjd279" target="_blank">GitHub</a></div>
-
+                    <p><i class="fas fa-envelope"></i> amrjaddad2002@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +32 479 75 00 12</p>
+                    <p><i class="fab fa-linkedin"></i> <a href="#">LinkedIn</a></p>
+                    <p><i class="fab fa-github"></i> <a href="#">GitHub</a></p>
                 </section>
 
-                <section class="side-block">
+                <section class="section-gauche">
+                    <h3>Certifications</h3>
+                    <div class="zone-badges">
+                        <div class="bloc-badge">
+                            <img src="IMG/badgeCCNA.png" alt="Cisco CCNA" class="img-badge" title="Présentation CCNA">
+                        </div>
+                        <div class="bloc-badge">
+                            <img src="IMG/badgeIoT.png" alt="IoT" class="img-badge" title="Introduction à l'IoT">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section-gauche">
                     <h3>Langues</h3>
-                    <div class="skill-bar">
-                        <div class="skill-info"><span>Français</span><span>100%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" data-percent="100%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info"><span>Néerlandais</span><span>75%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" data-percent="75%"></div></div>
-                    </div>
-                </section>
-
-                <section class="side-block">
-                    <h3>Loisirs</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.9;"></p>
+                    <p>Français (Maternel)</p>
+                    <p>Anglais (Technique)</p>
                 </section>
             </aside>
 
-            <div class="main-body">
-                <article class="info-group">
-                    <h2><i class="fas fa-user-circle"></i> Profil Professionnel</h2>
-                    <p></p>
-                </article>
+            <div id="flux-principal">
+                <section class="section-cv">
+                    <h2><i class="fas fa-user-circle"></i> Profil Personnel</h2>
+                    <p class="description">
+                        Passionné par le développement logiciel et les infrastructures réseau, je suis un étudiant rigoureux à la recherche d'opportunités pour mettre en pratique mes compétences techniques.
+                    </p>
+                </section>
 
-                <article class="info-group">
-                    <h2><i class="fas fa-code"></i> Compétences Techniques</h2>
-                    <div class="skill-bar main-skill">
-                        <div class="skill-info"><span>HTML5 / CSS3</span><span>90%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" data-percent="90%"></div></div>
+                <section class="section-cv">
+                    <h2><i class="fas fa-tools"></i> Compétences</h2>
+                    <div class="grille-outils">
+                        <div class="outil"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                        <div class="outil"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                        <div class="outil"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="outil"><i class="fab fa-js"></i><span>JS</span></div>
+                        <div class="outil"><i class="fab fa-java"></i><span>Java</span></div>
+                        <div class="outil"><i class="fab fa-php"></i><span>PHP</span></div>
                     </div>
-                    <div class="skill-bar main-skill">
-                        <div class="skill-info"><span>JavaScript / jQuery</span><span>70%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" data-percent="70%"></div></div>
-                    </div>
-                    <div class="skill-bar main-skill">
-                        <div class="skill-info"><span>PHP / SQL</span><span>55%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" data-percent="55%"></div></div>
-                    </div>
-                </article>
+                </section>
 
-                <article class="info-group">
-                    <h2><i class="fas fa-briefcase"></i> Expériences</h2>
-                    <div class="exp-item">
-                        <div class="exp-row"><strong></strong> <time datetime=""></time></div>
-                        <p class="company"></p>
-                        <p class="desc"></p>
+                <section class="section-cv">
+                    <h2><i class="fas fa-briefcase"></i> Expérience</h2>
+                    <div class="carte">
+                        <div class="entete-carte">
+                            <strong>Stagiaire Développeur</strong>
+                            <span class="date">2024</span>
+                        </div>
+                        <p class="entreprise">Entreprise - Bruxelles</p>
+                        <p>Maintenance de bases de données et création d'outils internes.</p>
                     </div>
-                    <div class="exp-item">
-                        <div class="exp-row"><strong></strong> <time datetime=""></time></div>
-                        <p class="company"></p>
-                        <p class="desc"></p>
-                    </div>
-                </article>
+                </section>
 
-                <article class="info-group">
-                    <h2><i class="fas fa-graduation-cap"></i> Formation</h2>
-                    <div class="exp-item">
-                        <div class="exp-row"><strong></strong> <span></span></div>
-                        <p></p>
+                <section class="section-cv">
+                    <h2><i class="fas fa-laptop-code"></i> Projets</h2>
+                    <div class="grille-projets">
+                        <div class="carte-projet">
+                            <h4>Infrastructure LAN</h4>
+                            <p>Simulation réseau complète (VLAN, DHCP, Routage).</p>
+                        </div>
+                        <div class="carte-projet">
+                            <h4>Portfolio Web</h4>
+                            <p>Site responsive avec transitions fluides.</p>
+                        </div>
                     </div>
-                </article>
+                </section>
             </div>
         </main>
-
-        <footer class="no-print">
-            <p>&copy;</p>
-        </footer>
     </div>
 
-    <script src="jquery-3.7.1.min.js"></script>
     <script src="JS/script.js"></script>
 </body>
 </html>
