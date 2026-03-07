@@ -1,29 +1,39 @@
-/* PLUGIN Lettering.js inclus */
-(function($){function injector(t,splitter,klass,after){var a=t.text().split(splitter),inject='';if(a.length){$(a).each(function(i,item){inject+='<span class="'+klass+(i+1)+'">'+item+'</span>'+after});t.empty().append(inject)}}var methods={init:function(){return this.each(function(){injector($(this),'','char','')})}};$.fn.lettering=function(method){if(methods[method]){return methods[method].apply(this,Array.prototype.slice.call(arguments,1))}else if(typeof method==='object'||!method){return methods.init.apply(this,arguments)}else{$.error('Method '+method+' does not exist')}}})(jQuery);
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. Mode Sombre
+    const btnTheme = document.getElementById('btn-theme');
+    const body = document.body;
 
-$(document).ready(function() {
-
-    // 1. Animation du nom (Lettering + Classe visible)
-    $('#mon-nom').lettering();
-    setTimeout(function() {
-        $('#mon-nom').addClass('visible');
-    }, 200);
-
-    // 2. Animation des barres de progression
-    $('.bar-fill').each(function() {
-        var targetWidth = $(this).attr('data-percent');
-        $(this).animate({ width: targetWidth }, 1500);
+    btnTheme.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        const icon = btnTheme.querySelector('i');
+        
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
     });
 
-    // 3. Mode Sombre
-    $('#dark-toggle').on('click', function() {
-        $('body').toggleClass('dark-mode');
-        $(this).find('i').toggleClass('fa-moon fa-sun');
-    });
-
-    // 4. Impression
-    $('#print-now').on('click', function() {
+    // 2. Impression
+    const btnPrint = document.getElementById('btn-print');
+    btnPrint.addEventListener('click', function() {
         window.print();
     });
 
+    // 3. Hover Effects interactifs
+    const outils = document.querySelectorAll('.outil');
+    outils.forEach(outil => {
+        outil.style.transition = "transform 0.3s ease, border-color 0.3s ease";
+        
+        outil.addEventListener('mouseenter', () => {
+            outil.style.transform = "translateY(-4px)";
+            outil.style.borderColor = "var(--bleu)";
+        });
+        
+        outil.addEventListener('mouseleave', () => {
+            outil.style.transform = "translateY(0)";
+            outil.style.borderColor = "transparent";
+        });
+    });
 });
