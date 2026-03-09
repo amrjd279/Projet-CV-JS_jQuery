@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --fond: #f8f9fa; 
     --carte: #ffffff; 
     --texte: #2d3436;
@@ -90,13 +90,37 @@ h2 { color: var(--bleu); margin-bottom: 15px; border-bottom: 2px solid var(--ble
 
 /* Impression A4 */
 @media print {
-    @page { size: A4; margin: 0; }
+    @page { size: A4 portrait; margin: 6mm; }
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        overflow: hidden;
+    }
+    body {
+        zoom: 0.9;
+        line-height: 1.25;
+    }
     .no-print { display: none !important; }
-    #page-cv { width: 100%; height: 297mm; }
-    #barre-haute { padding: 10mm 15mm; border-bottom: 2px solid var(--bleu); }
+    #page-cv {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        page-break-after: avoid;
+    }
+    #barre-haute { padding: 6mm 8mm; border-bottom: 2px solid var(--bleu); }
     #contenu-cv { flex-direction: row !important; }
-    #menu-lateral { width: 250px !important; background: #2d3436 !important; -webkit-print-color-adjust: exact; padding: 10mm 5mm; }
-    #flux-principal { padding: 10mm; background: white !important; }
+    #menu-lateral {
+        width: 240px !important;
+        background: #2d3436 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 6mm 4mm;
+    }
+    #flux-principal { padding: 6mm 8mm; background: white !important; }
+    .section-cv { margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
+    .section-gauche { margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
+    h2 { margin-bottom: 8px; }
+    .carte, .carte-projet { margin-bottom: 6px; }
     .outil, .carte, .carte-projet { box-shadow: none !important; border: 1px solid #eee; }
 }
 
