@@ -1,132 +1,81 @@
 ﻿:root {
-    --fond: #f8f9fa; 
-    --carte: #ffffff; 
-    --texte: #2d3436;
-    --bleu: #0984e3; 
-    --sidebar: #2d3436; 
-    --ombre: rgba(0,0,0,0.1);
+    --fond: #f0f2f5; --carte: #ffffff; --texte: #2d3436;
+    --bleu: #00CCFF; --sidebar: #2d3436; --or: #f1c40f; --ombre: rgba(0,0,0,0.1);
 }
 
 body.dark-mode {
-    --fond: #121212; 
-    --carte: #1e1e1e; 
-    --texte: #dfe6e9; 
-    --ombre: rgba(0,0,0,0.5);
+    --fond: #121212; --carte: #1e1e1e; --texte: #dfe6e9; --ombre: rgba(0,0,0,0.5);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: var(--fond); 
-    color: var(--texte);
-    transition: background 0.4s, color 0.4s; 
-    line-height: 1.4;
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background: var(--fond); color: var(--texte); 
+    transition: background 0.3s ease; line-height: 1.4;
+    font-size: 16px;
 }
 
-#page-cv { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; min-height: 100vh; }
+#page-cv { max-width: 1100px; margin: 20px auto; display: flex; flex-direction: column; box-shadow: 0 10px 30px var(--ombre); border-radius: 12px; overflow: hidden; }
 
-/* Header */
-#barre-haute { 
-    padding: 10px 30px; 
-    background: var(--carte); 
-    border-bottom: 3px solid var(--bleu);
-    display: flex; justify-content: space-between; align-items: center; 
-    box-shadow: 0 2px 5px var(--ombre);
-}
+#barre-haute { padding: 15px 40px; background: var(--carte); border-bottom: 4px solid var(--bleu); display: flex; justify-content: space-between; align-items: center; }
 
-/* Structure */
-#contenu-cv { display: flex; flex: 1; }
+#contenu-cv { display: flex; flex-direction: row; flex: 1; }
 
-#menu-lateral { 
-    width: 260px; 
-    background: var(--sidebar); 
-    color: white; 
-    padding: 20px; 
-}
+/* SIDEBAR */
+#menu-lateral { width: 280px; background: var(--sidebar); color: white; padding: 25px 20px; flex-shrink: 0; }
+.photo-profil img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--bleu); display: block; margin: 0 auto 15px; object-fit: cover; }
 
-#flux-principal { flex: 1; padding: 25px 35px; }
-
-/* Éléments Sidebar */
-.photo-profil img { 
-    width: 120px; height: 120px; border-radius: 50%; 
-    border: 3px solid var(--bleu); display: block; margin: 0 auto 15px; object-fit: cover;
-}
 .section-gauche { margin-bottom: 20px; }
-.section-gauche h3 { border-bottom: 1px solid #555; margin-bottom: 10px; padding-bottom: 5px; font-size: 1.1rem; }
-.section-gauche p { margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
+.section-gauche h3 { border-bottom: 1px solid #555; margin-bottom: 10px; padding-bottom: 5px; text-transform: uppercase; font-size: 0.8rem; color: var(--bleu); letter-spacing: 1px; }
+.section-gauche p, .langue-item, .hobby-item p { margin-bottom: 6px; font-size: 0.8rem; color: #ced4da; }
+.langue-item { display: flex; justify-content: space-between; align-items: center; }
 .section-gauche a { color: var(--bleu); text-decoration: none; }
 
-.zone-badges { display: flex; gap: 10px; flex-wrap: wrap; }
-.bloc-badge { text-align: center; font-size: 0.7rem; width: 60px; }
-.img-badge { width: 40px; margin-bottom: 5px; }
+.zone-badges { display: flex; gap: 10px; justify-content: center; padding: 5px 0; }
+.bloc-badge { display: flex; flex-direction: column; align-items: center; width: 55px; }
+.img-badge { width: 35px; height: 35px; object-fit: contain; }
+.label-badge { font-size: 0.65rem; color: #ced4da; margin-top: 3px; }
 
-/* Contenu Principal */
-h2 { color: var(--bleu); margin-bottom: 15px; border-bottom: 2px solid var(--bleu); display: inline-block; padding-bottom: 3px; font-size: 1.3rem; }
+.stars { color: var(--or); font-size: 0.7rem; }
+
+/* MAIN CONTENT */
+#flux-principal { flex: 1; padding: 30px 40px; background: var(--carte); }
+h2 { color: var(--bleu); margin-bottom: 15px; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; }
 .section-cv { margin-bottom: 25px; }
 
-.grille-outils { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px; }
-.outil { 
-    background: var(--carte); padding: 12px; border-radius: 8px; 
-    text-align: center; box-shadow: 0 2px 4px var(--ombre); font-size: 0.8rem;
-}
-.outil i { font-size: 1.5rem; color: var(--bleu); margin-bottom: 5px; display: block; }
+.grille-outils { display: grid; grid-template-columns: repeat(auto-fit, minmax(85px, 1fr)); gap: 10px; }
+.outil { background: var(--fond); padding: 10px; border-radius: 10px; text-align: center; font-size: 0.8rem; }
+.outil i { font-size: 1.5rem; color: var(--bleu); margin-bottom: 3px; display: block; }
 
-.carte, .carte-projet { 
-    background: var(--carte); padding: 15px; border-radius: 10px; 
-    box-shadow: 0 2px 4px var(--ombre); margin-bottom: 10px; 
-}
+.carte, .carte-projet { background: var(--fond); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
 .entete-carte { display: flex; justify-content: space-between; margin-bottom: 5px; }
-.date { background: var(--bleu); color: white; padding: 1px 8px; border-radius: 10px; font-size: 0.75rem; }
-.entreprise { font-style: italic; color: var(--bleu); font-size: 0.9rem; margin-bottom: 5px; }
+.date { background: var(--bleu); color: white; padding: 2px 8px; border-radius: 15px; font-size: 0.7rem; font-weight: bold; }
+.entreprise { font-weight: bold; color: var(--bleu); font-size: 0.9rem; margin-bottom: 5px; }
+
 .grille-projets { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-/* Boutons */
-.actions button { 
-    background: var(--fond); border: 1px solid #ddd; padding: 8px; 
-    border-radius: 50%; cursor: pointer; color: var(--texte); width: 35px; height: 35px; transition: 0.3s;
-}
+.actions button { background: var(--fond); border: none; padding: 10px; border-radius: 50%; cursor: pointer; color: var(--texte); transition: 0.3s; }
 .actions button:hover { background: var(--bleu); color: white; }
 
-/* Impression A4 */
-@media print {
-    @page { size: A4 portrait; margin: 6mm; }
-    html, body {
-        width: 210mm;
-        height: 297mm;
-        overflow: hidden;
-    }
-    body {
-        zoom: 0.9;
-        line-height: 1.25;
-    }
-    .no-print { display: none !important; }
-    #page-cv {
-        width: 100%;
-        height: 100%;
-        min-height: 0;
-        page-break-after: avoid;
-    }
-    #barre-haute { padding: 6mm 8mm; border-bottom: 2px solid var(--bleu); }
-    #contenu-cv { flex-direction: row !important; }
-    #menu-lateral {
-        width: 240px !important;
-        background: #2d3436 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        padding: 6mm 4mm;
-    }
-    #flux-principal { padding: 6mm 8mm; background: white !important; }
-    .section-cv { margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
-    .section-gauche { margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
-    h2 { margin-bottom: 8px; }
-    .carte, .carte-projet { margin-bottom: 6px; }
-    .outil, .carte, .carte-projet { box-shadow: none !important; border: 1px solid #eee; }
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    #contenu-cv { flex-direction: column; }
+    #menu-lateral { width: 100%; text-align: center; }
+    .langue-item { justify-content: center; gap: 20px; }
+    .grille-projets { grid-template-columns: 1fr; }
 }
 
-/* Mobile */
-@media (max-width: 800px) {
-    #contenu-cv { flex-direction: column; }
-    #menu-lateral { width: 100%; }
-    .grille-projets { grid-template-columns: 1fr; }
+/* --- OPTIMISATION PRINT (1 PAGE A4) --- */
+@media print {
+    @page { size: A4 portrait; margin: 5mm; }
+    body { background: white !important; zoom: 0.85; }
+    .no-print { display: none !important; }
+    #page-cv { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+    #contenu-cv { display: flex !important; flex-direction: row !important; }
+    #menu-lateral { width: 240px !important; background: #2d3436 !important; -webkit-print-color-adjust: exact; padding: 15px !important; }
+    #flux-principal { padding: 15px 25px !important; }
+    h2 { margin-bottom: 10px; }
+    .section-cv { margin-bottom: 15px; }
+    .carte { padding: 10px; }
 }
