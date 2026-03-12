@@ -1,24 +1,20 @@
-/**
- * Initialise les fonctionnalités principales du CV interactif au chargement du DOM
- * 
- * Fonctionnalités:
- * 
- * 1. Thème Sombre (Dark Mode)
- *    - Récupère le bouton de basculement du thème (#btn-theme)
- *    - Vérifie localStorage pour restaurer le thème précédent de l'utilisateur
- *    - Applique la classe 'dark-mode' au body si le thème était défini sur 'dark'
- *    - Bascule l'icône Font Awesome entre fa-moon et fa-sun selon le thème
- *    - Sauvegarde la préférence de l'utilisateur dans localStorage
- * 
- * 2. Bouton Impression (Print)
- *    - Ajoute un event listener au bouton d'impression (#btn-print)
- *    - Déclenche la boîte de dialogue d'impression native du navigateur
- * 
- * 3. Animations d'Intersection Observer
- *    - Crée un IntersectionObserver pour détecter quand les éléments entrent dans le viewport
- *    - Applique des animations en cascade avec un délai de 40ms entre chaque élément
- *    - Chaque élément apparaît progressivement avec une transition opacity et translateY
- *    - Les éléments cibles: .section-cv, .carte, .outil, .section-gauche
- *    - Désactive l'observation après l'animation pour optimiser les performances
- *    - Seuil de détection: 10% de l'élément visible (threshold: 0.1)
- */
+ 
+1. Thème Sombre (Dark Mode)
+- Récupère le bouton de basculement du thème (#btn-theme)
+- Vérifie localStorage pour restaurer le thème précédent de l'utilisateur
+- Applique la classe 'dark-mode' au body si le thème était défini sur 'dark'
+- Bascule l'icône Font Awesome entre fa-moon et fa-sun selon le thème
+- Sauvegarde la préférence de l'utilisateur dans localStorage
+ 
+2. Bouton Impression (Print)
+- Ajoute un event listener au bouton d'impression (#btn-print)
+- Déclenche la boîte de dialogue d'impression native du navigateur 
+
+3. Animations d'Intersection Observer
+- Crée un IntersectionObserver pour détecter quand les éléments entrent dans le viewport
+- Applique des animations en cascade avec un délai de 40ms entre chaque élément
+- Chaque élément apparaît progressivement avec une transition opacity et translateY
+- Les éléments cibles: .section-cv, .carte, .outil, .section-gauche
+- Désactive l'observation après l'animation pour optimiser les performances
+- Seuil de détection: 10% de l'élément visible (threshold: 0.1)
+
