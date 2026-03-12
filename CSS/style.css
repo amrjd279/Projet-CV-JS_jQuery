@@ -265,14 +265,15 @@ h2 {
     }
     body { 
         background: white !important; 
-        font-size: 13.5px; 
+        font-size: 11px; 
     }
     #page-cv { 
         margin: 0; 
         width: 100%; 
         border-radius: 0; 
         box-shadow: none; 
-        height: 100vh; 
+        height: 100vh;
+        overflow: hidden; 
     }
     .no-print { 
         display: none !important; 
@@ -283,21 +284,39 @@ h2 {
         height: 100%; 
     }
     #menu-lateral { 
-        width: 250px !important; 
+        width: 220px !important; 
         background: #141414 !important; 
         color: white !important; 
-        padding: 15px !important; 
+        padding: 10px !important; 
     }
     #flux-principal { 
-        padding: 15px 25px !important; 
-        background: white !important; 
+        padding: 10px 15px !important; 
+        background: white !important;
+        overflow: hidden;
     }
     .section-cv { 
-        margin-bottom: 10px !important; 
+        margin-bottom: 6px !important; 
     }
     .carte, .carte-projet { 
-        padding: 8px !important; 
-        margin-bottom: 5px !important; 
+        padding: 5px !important; 
+        margin-bottom: 4px !important; 
+    }
+    h2 {
+        font-size: 1rem !important;
+        margin-bottom: 6px !important;
+    }
+    .grille-projets {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 6px !important;
+    }
+    .grille-outils {
+        gap: 5px !important;
+    }
+    .outil {
+        padding: 5px !important;
+    }
+    .section-gauche {
+        margin-bottom: 10px !important;
     }
     .section-cv, .carte, .outil, .section-gauche { 
         opacity: 1 !important; 
