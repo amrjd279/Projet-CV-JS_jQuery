@@ -17,9 +17,15 @@ Ce dépôt contient le code source de mon curriculum vitae interactif. L'objecti
 ## 📁 Structure du projet
 ```text
 .
-├── index.html        # Structure principale du CV
 ├── CSS/
-│   └── style.css     # Design et gestion des thèmes
+│   └── style.css       # Design et gestion des thèmes
+└── IMG/
+    └── badgeCCNA.png
+    └── badgeIoT.png
+    └── icon.png
+    └── profil.png             # Images, badges et photo de profil
 ├── JS/
 │   └── script.js    # Logique interactive et animations
-└── IMG/             # Images, badges et photo de profil
+├── features-JS.txt
+├── index.html        # Structure principale du CV
+    
