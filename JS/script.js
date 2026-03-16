@@ -1,31 +1,38 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     // Thème Sombre
     const btnTheme = document.getElementById('btn-theme');
-    const icon = btnTheme.querySelector('i');
+    // On vérifie si le bouton existe pour éviter une erreur console
+    if (btnTheme) {
+        const icon = btnTheme.querySelector('i');
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        icon.classList.replace('fa-moon', 'fa-sun');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        btnTheme.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            if (icon) {
+                icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+            }
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
     }
 
-    btnTheme.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
     // Bouton Print
-    document.getElementById('btn-print').addEventListener('click', () => window.print());
+    const btnPrint = document.getElementById('btn-print');
+    if (btnPrint) {
+        btnPrint.addEventListener('click', () => window.print());
+    }
 
-    // Intersection Observer pour les transitions
+    // Intersection Observer
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }, index * 40); 
+                // On utilise une classe CSS plutôt que de l'inline style pour plus de propreté
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
                 observer.unobserve(entry.target);
             }
         });
