@@ -1,40 +1,46 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
-    // Thème Sombre
-    const btnTheme = document.getElementById('btn-theme');
-    const icon = btnTheme.querySelector('i');
+    // --- 1. Barre de progression ---
+    const progress = document.createElement('div');
+    progress.id = 'scroll-progress';
+    document.body.appendChild(progress);
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        icon.classList.replace('fa-moon', 'fa-sun');
-    }
-
-    btnTheme.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        progress.style.width = scrolled + "%";
     });
 
-    // Bouton Print
+    // --- 2. Thème Sombre ---
+    const btn = document.getElementById('btn-theme');
+    const updateTheme = (isDark) => {
+        document.body.classList.toggle('dark-mode', isDark);
+        const icon = btn.querySelector('i');
+        if(icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+
+    if (localStorage.getItem('theme') === 'dark') updateTheme(true);
+    
+    btn.addEventListener('click', () => {
+        updateTheme(!document.body.classList.contains('dark-mode'));
+    });
+
+    // --- 3. Impression ---
     document.getElementById('btn-print').addEventListener('click', () => window.print());
 
-    // Intersection Observer pour les transitions
+    // --- 4. Animations au Scroll ---
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }, index * 40); 
-                observer.unobserve(entry.target);
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.section-cv, .carte, .outil, .section-gauche').forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(15px)";
-        el.style.transition = "all 0.5s ease-out";
+    // On cible tous les éléments qui doivent "apparaître"
+    document.querySelectorAll('.section-cv, .carte, .outil, .section-gauche, .carte-projet').forEach(el => {
+        el.classList.add('reveal');
         observer.observe(el);
     });
 });
