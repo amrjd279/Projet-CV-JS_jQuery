@@ -7,7 +7,7 @@
     --sidebar: #141414; 
     --or: #f1c40f; 
     --ombre: rgba(0,0,0,0.1);
-    --timeline-line: #dfe6e9;
+    --border: #dfe6e9;
 }
 
 body.dark-mode {
@@ -15,168 +15,171 @@ body.dark-mode {
     --carte: #1e1e1e; 
     --texte: #C4C4C4; 
     --ombre: rgba(0,0,0,0.5);
-    --timeline-line: #3d3d3d;
+    --border: #3d3d3d;
 }
 
 /* --- 2. RESET & BASE --- */
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { 
     font-family: 'Segoe UI', Tahoma, sans-serif; 
     background: var(--fond); 
     color: var(--texte); 
     transition: background 0.3s ease, color 0.3s ease; 
-    line-height: 1.4;
+    line-height: 1.5;
     font-size: 16px;
 }
 
 #scroll-progress {
-    position: fixed;
-    top: 0; left: 0; height: 4px;
-    background: linear-gradient(to right, var(--bleu));
-    z-index: 1000;
+    position: fixed; top: 0; left: 0; height: 4px;
+    background: var(--bleu); z-index: 1000; width: 0%;
 }
 
 /* --- 3. STRUCTURE --- */
 #page-cv { 
-    max-width: 1100px; 
-    margin: 20px auto; 
-    display: flex; 
-    flex-direction: column; 
+    max-width: 1100px; margin: 20px auto; 
+    display: flex; flex-direction: column; 
     box-shadow: 0 10px 30px var(--ombre); 
-    border-radius: 12px; 
-    overflow: hidden; 
+    border-radius: 12px; overflow: hidden; 
 }
 
 #barre-haute { 
-    padding: 15px 40px; 
-    background: var(--carte); 
+    padding: 15px 40px; background: var(--carte); 
     border-bottom: 4px solid var(--bleu); 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex; justify-content: space-between; align-items: center; 
 }
 
 #contenu-cv { display: flex; flex: 1; }
 
 /* --- 4. SIDEBAR --- */
 #menu-lateral { 
-    width: 260px; 
-    background: var(--sidebar); 
-    color: white; 
-    padding: 20px; 
-    flex-shrink: 0; 
+    width: 280px; background: var(--sidebar); 
+    color: white; padding: 25px; flex-shrink: 0; 
 }
 
 .photo-profil img { 
-    width: 110px; height: 110px; 
-    border-radius: 50%; border: 3px solid var(--bleu); 
-    display: block; margin: 0 auto 15px; object-fit: cover; 
+    width: 110px; height: 110px; border-radius: 50%; 
+    border: 3px solid var(--bleu); display: block; 
+    margin: 0 auto 20px; object-fit: cover; 
 }
 
-.section-gauche { margin-bottom: 15px; }
+.section-gauche { margin-bottom: 25px; }
 .section-gauche h3 { 
-    border-bottom: 1px solid #555; margin-bottom: 8px; 
-    padding-bottom: 3px; text-transform: uppercase; 
-    font-size: 0.75rem; color: var(--bleu); 
+    border-bottom: 1px solid #444; margin-bottom: 12px; 
+    padding-bottom: 5px; text-transform: uppercase; 
+    font-size: 0.8rem; color: var(--bleu); letter-spacing: 1px;
 }
 
-.section-gauche p, .langue-item, .hobby-item p { margin-bottom: 4px; font-size: 0.9rem; color: #ced4da; }
-.section-gauche a { color: #05B0FF; text-decoration: none; }
+.section-gauche p, .langue-item, .hobby-item p { 
+    margin-bottom: 8px; font-size: 0.9rem; color: #ced4da; 
+    display: flex; align-items: center; gap: 10px;
+}
 
-/* Certifications compactes */
-.zone-badges { display: flex; gap: 10px; padding: 5px 0; }
-.bloc-badge { display: flex; flex-direction: column; align-items: center; width: 45px; }
-.img-badge { width: 55px; height: 55px; padding: 2px; }
-.label-badge { font-size: 0.75rem; color: #ced4da; margin-top: 3px; }
-.stars { color: var(--or); font-size: 0.8rem; }
+.section-gauche a { 
+    color: #05B0FF !important;
+    text-decoration: none; 
+    transition: 0.3s;
+}
+
+.section-gauche a:hover {
+    color: var(--or) !important;
+    text-decoration: underline;
+}
+
+.stars { color: var(--or); margin-left: auto; font-size: 0.8rem; }
+
+.zone-badges { display: flex; flex-direction: column; gap: 10px; padding: 5px 0; }
+.bloc-badge { 
+    display: flex; align-items: center; gap: 12px; 
+    background: rgba(255, 255, 255, 0.05); padding: 6px 10px; border-radius: 8px;
+}
+.img-badge { width: 40px; height: 40px; object-fit: contain; }
+.label-badge { font-size: 0.85rem; color: #eee; }
 
 /* --- 5. MAIN CONTENT --- */
-#flux-principal { flex: 1; padding: 25px 35px; background: var(--carte); }
-h2 { color: var(--bleu); margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
-.section-cv { margin-bottom: 20px; }
+#flux-principal { flex: 1; padding: 30px 40px; background: var(--carte); }
+h2 { color: var(--bleu); margin-bottom: 20px; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; }
+.section-cv { margin-bottom: 30px; }
 
-/* Timeline */
-.section-timeline { position: relative; border-left: 2px solid var(--timeline-line); margin-left: 10px; padding-left: 25px; }
-.section-timeline .carte::before {
-    content: ''; position: absolute; left: -34px; top: 18px;
-    width: 10px; height: 10px; background: var(--bleu);
-    border: 2px solid var(--carte); border-radius: 50%; z-index: 2;
+.grille-outils { display: flex; flex-wrap: wrap; gap: 10px; }
+.outil { 
+    background: var(--fond); padding: 8px 15px; border-radius: 20px; 
+    display: flex; align-items: center; gap: 10px; font-size: 0.85rem; 
+    border: 1px solid var(--border); transition: 0.3s;
+}
+.outil i { font-size: 1.1rem; color: var(--bleu); }
+.outil:hover { background: var(--bleu); color: white; transform: translateY(-2px); }
+.outil:hover i { color: white; }
+
+/* Formations Accordéon */
+.formations-flex { display: flex; flex-direction: column; gap: 12px; }
+.carte.accordeon {
+    background: var(--fond); padding: 15px; border-radius: 8px; 
+    border-left: 4px solid var(--bleu); transition: 0.3s; cursor: pointer;
+}
+.entete-carte { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.date { 
+    color: var(--bleu); 
+    font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; gap: 6px;
+}
+.corps-carte { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; }
+.carte.active .corps-carte { 
+    max-height: 200px; opacity: 1; padding-top: 15px; border-top: 1px solid var(--border); margin-top: 10px; 
+}
+.toggle-icon { transition: transform 0.3s; }
+.carte.active .toggle-icon { transform: rotate(180deg); }
+
+.grille-projets { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.carte-projet { background: var(--fond); padding: 15px; border-radius: 8px; border: 1px solid var(--border); }
+
+/* --- 6. BOUTONS & ANIMATIONS --- */
+.actions button { 
+    background: var(--fond); border: none; padding: 10px; border-radius: 50%; 
+    cursor: pointer; color: var(--texte); margin-left: 10px; font-size: 1.1rem;
 }
 
-/* Cartes */
-.carte, .carte-projet { background: var(--fond); padding: 12px; border-radius: 8px; margin-bottom: 10px; transition: 0.3s; }
-.carte:hover { transform: translateX(5px); }
-.entete-carte { display: flex; justify-content: space-between; align-items: center; }
-.date { background: var(--bleu); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; }
-.entreprise { font-weight: bold; color: var(--bleu); font-size: 0.95rem; }
+#back-to-top {
+    position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px;
+    background: var(--bleu); color: white; border: none; border-radius: 50%;
+    cursor: pointer; display: none; justify-content: center; align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000; transition: 0.3s;
+}
+#back-to-top.show { display: flex; }
 
-/* Grilles */
-.grille-outils { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; }
-.outil { background: var(--fond); padding: 8px; border-radius: 8px; text-align: center; font-size: 0.7rem; }
-.outil i { font-size: 1.3rem; color: var(--bleu); margin-bottom: 4px; display: block; }
-.grille-projets { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-/* Animations Scroll */
-.reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Boutons */
-.actions button { background: var(--fond); border: none; padding: 8px; border-radius: 50%; cursor: pointer; color: var(--texte); margin-left: 5px; }
+.titre-principal { opacity: 0; transform: translateX(-20px); transition: all 0.7s ease-out; }
+.titre-principal.visible { opacity: 1; transform: translateX(0); }
 
-/* --- 6. RESPONSIVE --- */
+/* Style du texte qui s'écrit */
+#typewriter {
+    font-weight: bold;
+    color: var(--bleu);
+}
+
+/* Le curseur clignotant */
+.cursor {
+    font-weight: bold;
+    color: var(--bleu);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- 7. RESPONSIVE --- */
 @media (max-width: 850px) {
     #contenu-cv { flex-direction: column; }
     #menu-lateral { width: 100%; }
     .grille-projets { grid-template-columns: 1fr; }
 }
 
-/* --- 7. OPTIMISATION IMPRESSION (1 PAGE A4) --- */
 @media print {
-    @page { size: A4 portrait; margin: 0; }
-    
-    body { background: white !important; font-size: 12px; line-height: 1.2; }
-    #page-cv { margin: 0; width: 100%; height: 100vh; border-radius: 0; box-shadow: none; display: flex; flex-direction: column; }
-    
-    #barre-haute { padding: 10px 20px; border-bottom: 2px solid var(--bleu); }
-    #barre-haute h1 { font-size: 1.5rem; }
-    .no-print { display: none !important; }
-    
-    #contenu-cv { display: flex !important; flex-direction: row !important; flex: 1; }
-    
-    #menu-lateral { 
-        width: 220px !important; background: #141414 !important; 
-        padding: 15px !important; color: white !important; 
-        -webkit-print-color-adjust: exact; 
-    }
-    .photo-profil img { width: 90px; height: 90px; margin-bottom: 10px; }
-    
-    #flux-principal { 
-        padding: 15px 25px !important; background: white !important; 
-        color: black !important; flex: 1;
-    }
-    
-    h2 { font-size: 1rem !important; margin-bottom: 8px !important; margin-top: 5px; }
-    .section-cv { margin-bottom: 12px !important; }
-    
-    .carte, .carte-projet { 
-        padding: 8px !important; margin-bottom: 6px !important; 
-        background: #f8f9fa !important; border: 1px solid #eee;
-        -webkit-print-color-adjust: exact;
-    }
-    
-    .section-timeline { border-left: 1px solid #ccc; padding-left: 15px; }
-    .section-timeline .carte::before { display: none; }
-    
-    .grille-outils { gap: 4px !important; }
-    .outil { padding: 4px !important; border: 1px solid #eee; }
-    .outil i { font-size: 1rem !important; }
-    
-    .grille-projets { gap: 8px !important; }
-    
-    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .no-print, #back-to-top, #scroll-progress { display: none !important; }
+    #page-cv { box-shadow: none; margin: 0; width: 100%; border-radius: 0; }
+    .corps-carte { max-height: none !important; opacity: 1 !important; display: block !important; }
+    body { background: white !important; }
 }
