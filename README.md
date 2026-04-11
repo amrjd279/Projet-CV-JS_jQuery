@@ -4,7 +4,6 @@
 
 ![Profil](https://img.shields.io/badge/Développeur-Web-blue?style=for-the-badge)
 ![Statut](https://img.shields.io/badge/Statut-Étudiant-green?style=for-the-badge)
-![Localisation](https://img.shields.io/badge/Localisation-Hainaut, 7000-orange?style=for-the-badge)
 
 **Curriculum Vitae interactif et responsive développé en HTML/CSS/JavaScript**
 
@@ -135,7 +134,7 @@ CV/
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/amr-jaddad)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/amr-jaddad-605737395/)
 [![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github)](https://github.com/amrjd279)
 
 </div>
@@ -144,6 +143,6 @@ CV/
 
 <div align="center">
 
-*Développé avec ❤️ par Amr Jaddad*
+*Développé par amrjd279 ⚖️💻
 
 </div>
