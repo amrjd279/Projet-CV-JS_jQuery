@@ -18,7 +18,6 @@
 - [Aperçu](#-aperçu)
 - [Fonctionnalités](#-fonctionnalités)
 - [Technologies utilisées](#-technologies-utilisées)
-- [Installation](#-installation)
 - [Structure du projet](#-structure-du-projet)
 - [Certifications](#-certifications)
 - [Compétences](#-compétences)
