@@ -18,6 +18,7 @@
 - [Aperçu](#-aperçu)
 - [Fonctionnalités](#-fonctionnalités)
 - [Technologies utilisées](#-technologies-utilisées)
+- [Installation](#-installation)
 - [Structure du projet](#-structure-du-projet)
 - [Certifications](#-certifications)
 - [Compétences](#-compétences)
@@ -112,10 +113,10 @@ CV/
 
 ## 📜 Certifications
 
-| Certification | Organisme |
-|---------------|-----------|
-| CCNA | Cisco |
-| IoT | Cisco |
+| Certification | Badge |
+|---------------|-------|
+| **CCNA** | <img src="IMG/badgeCCNA.png" alt="CCNA" width="50"> |
+| **IoT** | <img src="IMG/badgeIoT.png" alt="IoT" width="50"> |
 
 ---
 
