@@ -1,68 +1,40 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Barre de progression ---
-    const progress = document.getElementById('scroll-progress');
-    const backToTop = document.getElementById('back-to-top');
-
-    window.addEventListener('scroll', () => {
-        const h = document.documentElement;
-        
-        // Progression
-        const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-        if(progress) progress.style.width = scrolled + "%";
-
-        // Bouton Back to top
-        if(window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // --- 2. Thème Sombre ---
+    // Thème Sombre
     const btnTheme = document.getElementById('btn-theme');
-    const updateTheme = (isDark) => {
-        document.body.classList.toggle('dark-mode', isDark);
-        const icon = btnTheme.querySelector('i');
-        if(icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    };
+    const icon = btnTheme.querySelector('i');
 
-    if (localStorage.getItem('theme') === 'dark') updateTheme(true);
-    
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
     btnTheme.addEventListener('click', () => {
-        updateTheme(!document.body.classList.contains('dark-mode'));
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // --- 3. Impression ---
+    // Bouton Print
     document.getElementById('btn-print').addEventListener('click', () => window.print());
 
-    // --- 4. Accordéon Formations ---
-    const accordeons = document.querySelectorAll('.carte.accordeon');
-    accordeons.forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('active');
-        });
-    });
-
-    // --- 5. Animations au Scroll (Intersection Observer) ---
+    // Intersection Observer pour les transitions
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                observer.unobserve(e.target);
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }, index * 40); 
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
-    // Cible le header et les sections
-    const itemsToReveal = document.querySelectorAll('.titre-principal, .section-cv, .carte, .outil, .section-gauche, .carte-projet');
-    itemsToReveal.forEach(el => {
-        if(!el.classList.contains('titre-principal')) el.classList.add('reveal');
+    document.querySelectorAll('.section-cv, .carte, .outil, .section-gauche').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(15px)";
+        el.style.transition = "all 0.5s ease-out";
         observer.observe(el);
     });
 });
