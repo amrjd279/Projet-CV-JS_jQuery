@@ -1,8 +1,8 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     
-    // ==========================================
+    // ===================================
     // 1. CHARGEMENT DYNAMIQUE DE TYPED.JS
-    // ==========================================
+    // ===================================
     const loadScript = (src) => {
         return new Promise((resolve, reject) => {
             // Si Typed.js est déjà chargé, on résout directement
@@ -38,9 +38,9 @@
         });
 
 
-    // ==========================================
+    // ======================================
     // 2. MODE SOMBRE (LocalStorage + Toggle)
-    // ==========================================
+    // ======================================
     const btnTheme = document.getElementById('btn-theme');
     const icon = btnTheme?.querySelector('i');
 
@@ -68,17 +68,17 @@
     });
 
 
-    // ==========================================
+    // ====================
     // 3. BOUTON IMPRESSION
-    // ==========================================
+    // ====================
     document.getElementById('btn-print')?.addEventListener('click', () => {
         window.print();
     });
 
 
-    // ==========================================
+    // =========================================
     // 4. BARRE DE PROGRESSION DE SCROLL (Bonus)
-    // ==========================================
+    // =========================================
     const progress = document.createElement('div');
     progress.style.cssText = 'position:fixed;top:0;left:0;height:4px;background:#0088cc;width:0%;z-index:9999;transition:width 0.1s;';
     document.body.appendChild(progress);
@@ -94,9 +94,9 @@
     window.addEventListener('resize', updateProgress); // Mise à jour au redimensionnement
 
 
-    // ==========================================
+    // ==============================================
     // 5. ANIMATIONS D'ENTRÉE (Intersection Observer)
-    // ==========================================
+    // ==============================================
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
