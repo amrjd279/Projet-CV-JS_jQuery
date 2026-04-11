@@ -1,0 +1,44 @@
+Fonctionnalités JavaScript - Projet CV de Amr Jaddad
+
+----------------------------------------------------
+
+1. TYPED.JS - EFFET MACHINE A ÉCRIRE
+    • Chargement dynamique via CDN (unpkg.com)
+    • Animation du nom "Amr Jaddad" dans #typed-name
+    • Fallback statique si échec de chargement
+    • Vitesse : 70ms | Curseur : masqué | Délai : 300ms
+Lien : https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js
+
+----------------------------------------------------
+
+2. MODE SOMBRE (DARK MODE)
+    • Toggle via bouton #btn-theme
+    • Persistance avec localStorage
+    • Icône dynamique : fa-moon ⇄ fa-sun
+    • Application automatique au chargement
+
+----------------------------------------------------
+
+3. IMPRESSION DU CV
+    • Bouton #btn-print déclenche window.print()
+    • Compatible feuilles de style @media print
+
+----------------------------------------------------
+
+4. BARRE DE PROGRESSION DE SCROLL
+    • Barre fixe en haut de page (4px, #0088cc)
+    • Mise à jour en temps réel (scroll + resize)
+    • Transition fluide par un rendu professionnel
+
+----------------------------------------------------
+
+5. ANIMATIONS AU SCROLL (Intersection Observer)
+    • Éléments ciblés : .section-cv, .carte, .outil
+    • Effet : fade-in + slide-up (opacity + translateY)
+    • Transition : 0.6s ease-ou
+    • Optimisation : arrêt de l'observation après animation
+
+----------------------------------------------------
+
+Font Awesome (îcones) - Requis pour le toggle thème :
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
