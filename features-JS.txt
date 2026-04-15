@@ -1,44 +1,84 @@
-Fonctionnalités JavaScript - Projet CV de Amr Jaddad
+Fonctionnalités JavScript - Projet CV (Amr Jaddad)
 
-----------------------------------------------------
+1. Typed.js - Effet machine à écrire
+- Chargement dynamique de la librairie via CDN :
+https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js
+- Animation du nom "Amr Jaddad" dans '#typed-name'
+- Paramètres :
+    * vitesse de frappe : 70ms
+    * délai initial : 300ms
+    * curseur désactivé
+- Système de fallback
+    * Affichage statique du nom si le chargement échoue
 
-1. TYPED.JS - EFFET MACHINE A ÉCRIRE
-    • Chargement dynamique via CDN (unpkg.com)
-    • Animation du nom "Amr Jaddad" dans #typed-name
-    • Fallback statique si échec de chargement
-    • Vitesse : 70ms | Curseur : masqué | Délai : 300ms
-Lien : https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js
+-------------------------------------------------------
 
-----------------------------------------------------
+2. Mode sombre (Dark Mode)
+- Activation via bouton #btn-theme
+- Ajout / suppression de la classe dark-mode sur le <body>
+- Sauvegarde du choix utilisateur dans localStorage
+- Icône dynamique :
+    * fa-moon (mode clair)
+    * fa-sun (mode sombre)
+- Application automatique du thème au chargement de la page
 
-2. MODE SOMBRE (DARK MODE)
-    • Toggle via bouton #btn-theme
-    • Persistance avec localStorage
-    • Icône dynamique : fa-moon ⇄ fa-sun
-    • Application automatique au chargement
+-----------------------------------------------------------
 
-----------------------------------------------------
+3. Impression du CV
+- Bouton '#btn-print'
+- Déclenchement de 'window.print()'
+- Compatible avec une feuille CSS dédiée '@media print'
+- Permet une impression optimisée du CV
 
-3. IMPRESSION DU CV
-    • Bouton #btn-print déclenche window.print()
-    • Compatible feuilles de style @media print
+--------------------------------------------------------
 
-----------------------------------------------------
+4. Barre de progression de lecture
+- Barre fixe en haut de page (4px, couleur #0088cc)
+- Création dynamique en JavaScript
+- Calcul basé sur :
+    * position de scroll vertical
+    * hauteur totale du document
+- Mise à jour en temps réel lors du scroll
 
-4. BARRE DE PROGRESSION DE SCROLL
-    • Barre fixe en haut de page (4px, #0088cc)
-    • Mise à jour en temps réel (scroll + resize)
-    • Transition fluide par un rendu professionnel
+--------------------------------------------------------
 
-----------------------------------------------------
+5. Animations au scroll (Intersection Observer)
+- Cibles :
+    * '.section-cv'
+    * '.carte'
+    * '.outil'
+- Effet visuel :
+    * apparition progressive (opacity 0 → 1)
+    * translation verticale (translateY 20px → 0)
+- Transition fluide : 0.6s
+- Optimisation :
+    *chaque élément est désactivé après animation ('unobserve')
 
-5. ANIMATIONS AU SCROLL (Intersection Observer)
-    • Éléments ciblés : .section-cv, .carte, .outil
-    • Effet : fade-in + slide-up (opacity + translateY)
-    • Transition : 0.6s ease-ou
-    • Optimisation : arrêt de l'observation après animation
+--------------------------------------------------------
 
-----------------------------------------------------
+6. Affichage des labels sous les icônes
+- Cible : éléments '.outil'
+- Génération dynamique de texte via JavaScript
+- Mapping entre classes Font Awesome et noms :
+    * fa-html5 → HTML5
+    * fa-css3 → CSS3
+    * fa-php → PHP
+    * fa-database → SQL
+    * fa-js → JavaScript
+    * fa-java → Java
+    * fa-python → python
+    * fa-react → React
+    * fa-network-wired → Réseaux
+    * fa-file-word → Word
+    * fa-file-excel → Excel
+    * fa-file-powerpoint → PowerPoint
+- Interaction utilisateur :
+    * affichage du label au survol (hover)
+    * masquage au départ du hover
+- Transition fluide : 0.3s
 
-Font Awesome (îcones) - Requis pour le toggle thème :
-https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+--------------------------------------------------------
+
+Dépendances externes
+- Font Awesome (icônes) : https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+- Typed.js (effet texte dynamique) : https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js
