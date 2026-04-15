@@ -40,6 +40,13 @@ body {
     font-size: 16px;
 }
 
+#typed-name { 
+    font-size: 2rem; 
+    color: var(--bleu);
+    height: 1.2em; 
+    margin-top: 4px; 
+}
+
 /* ================
    LAYOUT PRINCIPAL
    ================ */
@@ -124,12 +131,14 @@ body {
 .stars { color: var(--or); font-size: 0.9rem; }
 
 .section-gauche a { 
-    color: #05B0FF; 
+    color: #ffffff; 
     text-decoration: none; 
     transition: var(--transition);
 }
-
-.section-gauche a:hover { text-decoration: underline; }
+.section-gauche a:hover { 
+    text-decoration: none; 
+    color: #05B0FF;  /*Sur LinkedIn et GitHub */
+}
 
 /* --- Style des Badges --- */
 .zone-badges { 
@@ -195,7 +204,6 @@ h2 {
 }
 
 .outil { 
-    background: var(--fond); 
     padding: 12px; 
     border-radius: 10px; 
     text-align: center; 
@@ -262,7 +270,7 @@ h2 {
     border-left: 4px solid var(--bleu);
 }
 
-.carte-projet h4 { margin-bottom: 5px; color: var(--bleu); }
+.carte-projet h3 { margin-bottom: 5px; color: var(--bleu); }
 
 /* ================
    BOUTONS D'ACTION
@@ -297,186 +305,4 @@ h2 {
 
 @media (min-width: 1800px) {
     #page-cv { max-width: 1300px; }
-}
-
-/* =====================================
-   STYLE IMPRESSION - OPTIMISÉ 1 PAGE A4
-   ===================================== */
-@media print {
-    @page { 
-        margin: 8mm; 
-        size: A4 portrait; 
-    }
-    
-    .no-print { display: none !important; }
-    
-    body { 
-        background: white !important; 
-        font-size: 9.5px !important;
-        line-height: 1.3 !important;
-        color: #000 !important;
-    }
-    
-    #page-cv { 
-        box-shadow: none !important; 
-        margin: 0 !important; 
-        width: 100% !important; 
-        max-width: 100% !important; 
-        border-radius: 0 !important;
-        background: white !important;
-    }
-    
-    /* Layout compact en 2 colonnes */
-    #contenu-cv { 
-        display: flex !important; 
-        flex-direction: row !important;
-        gap: 0 !important;
-    }
-    
-    #menu-lateral { 
-        background: #1a1a1a !important; 
-        color: #fff !important; 
-        width: 28% !important;
-        padding: 8px !important;
-        flex-shrink: 0 !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-    
-    #flux-principal { 
-        background: white !important; 
-        padding: 8px 12px !important; 
-        width: 72% !important;
-    }
-
-    /* Titres compacts */
-    h1 { font-size: 16px !important; margin: 0 0 2px !important; }
-    h1 + p { font-size: 9px !important; margin: 0 0 5px !important; opacity: 0.9; }
-    h2 { 
-        font-size: 11px !important; 
-        margin: 8px 0 4px !important; 
-        padding-bottom: 2px !important;
-        border-bottom: 1px solid #0088cc !important;
-    }
-    h2 i { margin-right: 4px !important; }
-    
-    /* Sidebar compacte */
-    .photo-profil img { 
-        width: 70px !important; 
-        height: 70px !important; 
-        margin: 0 auto 8px !important;
-        border-width: 2px !important;
-    }
-    
-    .section-gauche { margin-bottom: 10px !important; }
-    .section-gauche h3 { 
-        font-size: 9px !important; 
-        margin: 0 0 6px !important; 
-        padding-bottom: 3px !important;
-        border-bottom-color: #555 !important;
-    }
-    .section-gauche p, .langue-item, .hobby-item p { 
-        margin: 2px 0 !important; 
-        font-size: 9px !important; 
-    }
-    
-    /* Badges miniatures */
-    .zone-badges { gap: 5px !important; }
-    .bloc-badge { width: 45px !important; }
-    .img-badge { width: 40px !important; height: 40px !important; }
-    .label-badge { font-size: 7px !important; margin-top: 2px !important; }
-    
-    /* Langues - étoiles compactes */
-    .stars { font-size: 7px !important; }
-    .langue-item span:first-child { font-size: 9px !important; }
-    
-    /* Compétences - grille dense */
-    .grille-outils { 
-        display: grid !important; 
-        grid-template-columns: repeat(4, 1fr) !important; 
-        gap: 4px !important; 
-    }
-    .outil { 
-        padding: 4px 2px !important; 
-        border-radius: 4px !important; 
-        font-size: 7.5px !important;
-        background: #f0f0f0 !important;
-    }
-    .outil i { 
-        font-size: 14px !important; 
-        margin-bottom: 2px !important; 
-    }
-    
-    /* Cartes formation/expérience ultra-compactes */
-    .carte { 
-        background: #fafafa !important; 
-        padding: 6px 8px !important; 
-        margin-bottom: 6px !important; 
-        border-radius: 4px !important;
-        border-left: 3px solid #0088cc !important;
-    }
-    .entete-carte { 
-        display: flex !important; 
-        justify-content: space-between !important;
-        flex-wrap: wrap !important;
-        gap: 2px !important;
-    }
-    .entete-carte strong { font-size: 10px !important; }
-    .date { 
-        background: #0088cc !important; 
-        color: white !important; 
-        padding: 1px 6px !important; 
-        border-radius: 10px !important; 
-        font-size: 7px !important; 
-        font-weight: bold !important;
-        white-space: nowrap !important;
-    }
-    .entreprise { 
-        font-weight: 600 !important; 
-        font-size: 9px !important; 
-        margin: 2px 0 !important; 
-        color: #006699 !important;
-    }
-    .carte > p:last-child { 
-        font-size: 9px !important; 
-        margin: 0 !important; 
-        line-height: 1.2 !important;
-    }
-    
-    /* Projets - grille 2 colonnes compacte */
-    .grille-projets { 
-        display: grid !important; 
-        grid-template-columns: 1fr 1fr !important; 
-        gap: 6px !important; 
-    }
-    .carte-projet { 
-        background: #fafafa !important; 
-        padding: 6px 8px !important; 
-        border-radius: 4px !important;
-        border-left: 3px solid #0088cc !important;
-    }
-    .carte-projet h4 { 
-        margin: 0 0 3px !important; 
-        font-size: 9.5px !important; 
-        color: #006699 !important; 
-    }
-    .carte-projet p { 
-        font-size: 8.5px !important; 
-        margin: 0 !important; 
-        line-height: 1.2 !important;
-    }
-    
-    /* Profil - texte justifié compact */
-    .section-cv p { 
-        margin: 0 0 4px !important; 
-        font-size: 9.5px !important; 
-        text-align: justify !important;
-        line-height: 1.25 !important;
-    }
-    
-    /* Éviter les coupures malvenues */
-    .section-cv, .carte { 
-        page-break-inside: avoid !important; 
-        break-inside: avoid !important;
-    }
 }
