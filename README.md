@@ -96,7 +96,8 @@ Le site offre une expérience utilisateur optimale avec :
 ```
 CV/
 ├── CSS/
-│   └── style.css       # Feuilles de styles
+│   └── style.css       # Feuille de styles
+│   └── print.css       # Feuille de styles de PRINT
 ├── IMG/
 │   ├── profil.png      # Photo de profil
 │   ├── badgeCCNA.png   # Certification Cisco CCNA
