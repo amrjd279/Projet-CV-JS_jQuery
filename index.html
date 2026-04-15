@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="canonical" content="index.html">
     <meta name="author" content="Amr Jaddad">
@@ -12,18 +12,18 @@
     <link rel="icon" href="IMG/icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/print.css" media="print">
 </head>
 <body>
-
     <div id="page-cv">
-        <header id="barre-haute" role="banner">
+        <header id="barre-haute">
             <div class="titre-principal">
-                <h1><span id="typed-name"></span></h1>
+                <h1 id="typed-name"></h1>
                 <p>Étudiant en Informatique | Option Développement - Conception d'applications</p>
             </div>
             <div class="actions no-print">
-                <button id="btn-theme" title="Mode Sombre/Clair" aria-label="Changer le thème"><i class="fas fa-moon"></i></button>
-                <button id="btn-print" title="Imprimer" aria-label="Imprimer le CV"><i class="fas fa-print"></i></button>
+                <button type="button" id="btn-theme"><i class="fas fa-moon"></i></button>
+                <button type="button" id="btn-print" title="Imprimer" aria-label="Imprimer le CV"><i class="fas fa-print"></i></button>
             </div>
         </header>
 
@@ -34,10 +34,10 @@
                 </div>
 
                 <section class="section-gauche">
-                    <h3>Contact</h3>
+                    <h2>Contact</h2>
                     <p><i class="fas fa-birthday-cake"></i> 27 septembre 2002</p>
-                    <p><i class="fas fa-envelope"></i> amrjaddad2002@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +32 479 75 00 12</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:amrjaddad2002@gmail.com"> amrjaddad2002@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i><a href="tel:+32479750012"> +32 479 75 00 12</a> </p>
                     <p><i class="fas fa-map-marker-alt"></i> Hainaut, 7000</p>
                     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/amr-jaddad-605737395/" target="_blank" rel="noopener"> Amr Jaddad</a></p>
                     <p><i class="fab fa-github"></i> <a href="https://github.com/amrjd279" target="_blank" rel="noopener"> amrjd279</a></p>
@@ -45,14 +45,14 @@
                 </section>
 
                 <section class="section-gauche">
-                    <h3>Qualités</h3>
+                    <h2>Qualités</h2>
                     <div class="hobby-item"><p><i class="fas fa-hammer"></i> Persévérant</p></div>
-                    <div class="hobby-item"><p><i class="fas fa-users"></i> Esprit d'équipe</p></div>
                     <div class="hobby-item"><p><i class="fas fa-magnifying-glass"></i> Sens du détail</p></div>
+                    <div class="hobby-item"><p><i class="fa-solid fa-brain"></i> Esprit d'équipe</p></div>
                 </section>
 
                 <section class="section-gauche">
-                    <h3>Certifications</h3>
+                    <h2>Certifications</h2>
                     <div class="zone-badges">
                         <div class="bloc-badge">
                             <img src="IMG/badgeCCNA.png" alt="Cisco CCNA" class="img-badge">
@@ -66,23 +66,23 @@
                 </section>
                 
                 <section class="section-gauche">
-                    <h3>Langues</h3>
+                    <h2>Langues</h2>
                     <div class="langue-item">
-                        <span>Français</span>
+                        <span>Français : maternelle</span>
                         <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
                     </div>
                     <div class="langue-item">
-                        <span>Néerlandais</span>
+                        <span>Néerlandais : B1</span>
                         <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
                     </div>
                     <div class="langue-item">
-                        <span>Arabe</span>
+                        <span>Arabe : A2</span>
                         <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
                     </div>
                 </section>
 
                 <section class="section-gauche">
-                    <h3>Hobbies</h3>
+                    <h2>Hobbies</h2>
                     <div class="hobby-item"><p><i class="fas fa-code"></i> Création web</p></div>
                     <div class="hobby-item"><p><i class="fas fa-gamepad"></i> Jeux vidéo</p></div>
                     <div class="hobby-item"><p><i class="fa-solid fa-music"></i> Musique</p></div>
@@ -101,18 +101,18 @@
                 <section class="section-cv">
                     <h2><i class="fas fa-tools"></i> Compétences</h2>
                     <div class="grille-outils">
-                        <div class="outil"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                        <div class="outil"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                        <div class="outil"><i class="fab fa-php"></i><span>PHP</span></div>
-                        <div class="outil"><i class="fas fa-database"></i><span>SQL</span></div>
-                        <div class="outil"><i class="fab fa-js"></i><span>JS</span></div>
-                        <div class="outil"><i class="fab fa-java"></i><span>Java</span></div>
-                        <div class="outil"><i class="fab fa-python"></i><span>Python</span></div>
-                        <div class="outil"><i class="fab fa-react"></i><span>React</span></div>
-                        <div class="outil"><i class="fas fa-network-wired"></i><span>Réseau</span></div>
-                        <div class="outil"><i class="fas fa-file-word"></i><span>Word</span></div>
-                        <div class="outil"><i class="fas fa-file-excel"></i><span>Excel</span></div>
-                        <div class="outil"><i class="fas fa-file-powerpoint"></i><span>PowerPoint</span></div>
+                        <div class="outil" data-name="HTML5"><i class="fab fa-html5"></i></div>
+                        <div class="outil" data-name="CSS3"><i class="fab fa-css3-alt"></i></div>
+                        <div class="outil" data-name="PHP"><i class="fab fa-php"></i></div>
+                        <div class="outil" data-name="SQL"><i class="fas fa-database"></i></div>
+                        <div class="outil" data-name="JavaScript"><i class="fab fa-js"></i></div>
+                        <div class="outil" data-name="Java"><i class="fab fa-java"></i></div>
+                        <div class="outil" data-name="Python"><i class="fab fa-python"></i></div>
+                        <div class="outil" data-name="React"><i class="fab fa-react"></i></div>
+                        <div class="outil" data-name="Réseau"><i class="fas fa-network-wired"></i></div>
+                        <div class="outil" data-name="Word"><i class="fas fa-file-word"></i></div>
+                        <div class="outil" data-name="Excel"><i class="fas fa-file-excel"></i></div>
+                        <div class="outil" data-name="PowerPoint"><i class="fas fa-file-powerpoint"></i></div>
                     </div>
                 </section>
 
@@ -120,7 +120,7 @@
                     <h2><i class="fas fa-graduation-cap"></i> Formations</h2>
                     <div class="carte">
                         <div class="entete-carte">
-                            <strong>Développeur web front-end</strong>
+                            <h3>Développeur web front-end</h3>
                             <span class="date">2026</span>
                         </div>
                         <p class="entreprise">IFAPME - Braine-le-Comte</p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="carte">
                         <div class="entete-carte">
-                            <strong>Bachelier en Informatique</strong>
+                            <h3>Bachelier en Informatique</h3>
                             <span class="date">2023 - 2026</span>
                         </div>
                         <p class="entreprise">HEH Sciences et technologies - Mons</p>
@@ -136,7 +136,7 @@
                     </div>
                     <div class="carte">
                         <div class="entete-carte">
-                            <strong>Secondaire en Techniques de transition</strong>
+                            <h3>Secondaire en Techniques de transition</h3>
                             <span class="date">2016 - 2023</span>
                         </div>
                         <p class="entreprise">Instituts Saint Luc - Mons</p>
@@ -148,7 +148,7 @@
                     <h2><i class="fas fa-briefcase"></i> Expérience</h2>
                     <div class="carte">
                         <div class="entete-carte">
-                            <strong>Vendeur (emploi étudiant)</strong>
+                            <h3>Vendeur (emploi étudiant)</h3>
                             <span class="date">Été 2023</span>
                         </div>
                         <p class="entreprise">Cash Converters - Mons</p>
@@ -160,20 +160,22 @@
                     <h2><i class="fas fa-laptop-code"></i> Projets</h2>
                     <div class="grille-projets">
                         <div class="carte-projet">
-                            <h4>Projet - Hackathon</h4>
+                            <h3><i class="fa-solid fa-dragon"></i> Projet - Hackathon</h3>
                             <p>Jeu Pygame développé en équipe. Gestion collaborative via GitHub et Linear.</p>
+                            <p class="equipe"><i class="fas fa-users"></i> Équipe : AMAND Lucas, ERNOUD Lucas, HERMAN Daniel, JADDAD Amr et TAMELLINI Flavio </p>
                         </div>
                         <div class="carte-projet">
-                            <h4>Projet - Linux Administration</h4>
+                            <h3><i class="fas fa-server"></i> Projet - Linux Administration</h3>
                             <p>Configuration de serveurs NFS/NTP, sécurité système et plans de sauvegarde.</p>
+                            <p class="equipe"><i class="fas fa-users"></i> Équipe : DECLERCQ Nathan, JADDAD Amr, VANDE WALLE Florian</p>
                         </div>
                         <div class="carte-projet">
-                            <h4>Projet - site web</h4>
-                            <p>Site web <em>responsive</em> développé en HTML, CSS, SEO et ergonomie.</p>
+                            <h3><i class="fas fa-globe"></i> Projet - site web</h3>
+                            <p>Site web <em>responsive</em> développé en HTML, CSS respectant le SEO et ergonomie.</p>
                         </div>
                         <div class="carte-projet">
-                            <h4>Projet - Curriculum Vitae</h4>
-                            <p>CV développé en HTML, CSS et JavaScript ou jQuery.</p>
+                            <h3><i class="fas fa-file-alt"></i> Projet - Curriculum Vitae</h3>
+                            <p>CV <em>interactif</em> développé en HTML, CSS et JavaScript ou jQuery respectant le SEO et ergonomie.</p>
                         </div>
                     </div>
                 </section>
