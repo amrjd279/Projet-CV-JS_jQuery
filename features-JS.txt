@@ -79,6 +79,20 @@ https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js
 
 --------------------------------------------------------
 
+7. Bouton "Retour en haut"
+- Création dynamique d’un bouton flottant (#btn-top) en bas à droite
+- Style circulaire avec icône Font Awesome (fa-arrow-up)
+- Accessibilité :
+    * type="button"
+    * aria-label="Retour en haut"
+- Visibilité conditionnelle :
+    * bouton masqué par défaut (opacity: 0, clic désactivé)
+    * affichage automatique après 300px de scroll
+- Interaction :
+    * clic sur le bouton → retour fluide en haut de page (scrollTo + behavior: smooth)
+- UX :
+    * transition d’opacité rapide et fluide (0.25s)
+
 Dépendances externes
 - Font Awesome (icônes) : https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
 - Typed.js (effet texte dynamique) : https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js

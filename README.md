@@ -99,10 +99,11 @@ CV/
 │   └── style.css       # Feuille de styles
 │   └── print.css       # Feuille de styles de PRINT
 ├── IMG/
-│   ├── profil.png      # Photo de profil
-│   ├── badgeCCNA.png   # Certification Cisco CCNA
-│   ├── badgeIoT.png    # Certification Cisco IoT
-│   └── icon.png        # Favicon
+│   ├── badgeCCNA.webp  # Badge Cisco CCNA
+│   ├── badgeIoT.webp   # Badge IoT
+│   ├── icon.png        # Favicon
+│   ├── profil.png      # Photo (de moi)
+│   └── shindo.png      # Logo du karatéka
 ├── JS/
 │   └── script.js       # JavaScript interactif
 ├── features-JS.txt     # Fonctionnalités JS

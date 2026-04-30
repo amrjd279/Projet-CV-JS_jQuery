@@ -1,181 +1,281 @@
-    /* =====================================
-   STYLE IMPRESSION - OPTIMISÉ 1 PAGE A4
-   ===================================== */
 @media print {
-    @page { 
-        margin: 8mm; 
-        size: A4 portrait; 
+    @page {
+        size: A4 portrait;
+        margin: 5mm;
     }
-    
-    .no-print { display: none !important; }
-    
-    body { 
-        background: white !important; 
-        font-size: 9.5px !important;
-        line-height: 1.3 !important;
-        color: #000 !important;
-    }
-    
-    #page-cv { 
-        box-shadow: none !important; 
-        margin: 0 !important; 
-        width: 100% !important; 
-        max-width: 100% !important; 
-        border-radius: 0 !important;
-        background: white !important;
-    }
-    
-    /* Layout compact en 2 colonnes */
-    #contenu-cv { 
-        display: flex !important; 
-        flex-direction: row !important;
-        gap: 0 !important;
-    }
-    
-    #menu-lateral { 
-        background: #1a1a1a !important; 
-        color: #fff !important; 
-        width: 28% !important;
-        padding: 8px !important;
-        flex-shrink: 0 !important;
-        -webkit-print-color-adjust: exact !important;
+    * {
         print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        box-sizing: border-box !important;
     }
-    
-    #flux-principal { 
-        background: white !important; 
-        padding: 8px 12px !important; 
-        width: 72% !important;
+    .section-cv,
+    .carte,
+    .outil,
+    .carte-projet {
+        opacity: 1 !important;
+        transform: none !important;
     }
-
-    /* Titres compacts */
-    h1 { font-size: 16px !important; margin: 0 0 2px !important; }
-    h1 + p { font-size: 9px !important; margin: 0 0 5px !important; opacity: 0.9; }
-    h2 { 
-        font-size: 11px !important; 
-        margin: 8px 0 4px !important; 
-        padding-bottom: 2px !important;
-        border-bottom: 1px solid #0088cc !important;
+    html,
+    body {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+        font-size: 9.5px !important;
+        line-height: 1.22 !important;
+        color: #1f2933 !important;
     }
-    h2 i { margin-right: 4px !important; }
-    
-    /* Sidebar compacte */
-    .photo-profil img { 
-        width: 70px !important; 
-        height: 70px !important; 
-        margin: 0 auto 8px !important;
-        border-width: 2px !important;
+    #page-cv {
+        width: 100% !important;
+        min-height: calc(297mm - 10mm) !important;
+        max-height: calc(297mm - 10mm) !important;
+        height: calc(297mm - 10mm) !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        page-break-after: avoid !important;
+        page-break-before: avoid !important;
     }
-    
-    .section-gauche { margin-bottom: 10px !important; }
-    .section-gauche h3 { 
-        font-size: 9px !important; 
-        margin: 0 0 6px !important; 
+    /* ── HEADER ── */
+    #barre-haute {
+        padding: 5px 8px !important;
+        border-bottom: 1px solid #0078b6 !important;
+    }
+    #typed-name {
+        font-size: 16px !important;
+        line-height: 1.1 !important;
+        color: #0078b6 !important;
+    }
+    .titre-principal p {
+        font-size: 10px !important;
+        letter-spacing: 0.8px !important;
+        color: #636e72 !important;
+    }
+    .actions,
+    .no-print {
+        display: none !important;
+    }
+    /* ── LAYOUT ── */
+    #contenu-cv {
+        display: flex !important;
+        flex-direction: row !important;
+        flex: 1 1 auto !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        gap: 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+    /* ════════════════════════════════
+       COLONNE GAUCHE — fond sombre
+       ════════════════════════════════ */
+    #menu-lateral {
+        width: 24% !important;
+        padding: 8px !important;
+        background: #1E1E1E !important;
+        color: #ffffff !important;
+    }
+    #menu-lateral * {
+        color: #ffffff !important;
+    }
+    #menu-lateral a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+    }
+    /* ← Espace entre chaque bloc de la sidebar */
+    .section-gauche {
+        margin-bottom: 10px !important;
+        padding-top: 4px !important;
+    }
+    .section-gauche h2 {
+        font-size: 12px !important;
+        margin-bottom: 5px !important;
+        margin-top: 4px !important;
+        letter-spacing: 1px !important;
         padding-bottom: 3px !important;
-        border-bottom-color: #555 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+        color: #0078b6 !important;
     }
-    .section-gauche p, .langue-item, .hobby-item p { 
-        margin: 2px 0 !important; 
-        font-size: 9px !important; 
+    .section-gauche p,
+    .langue-item,
+    .label-badge {
+        font-size: 12px !important;
+        margin-bottom: 3px !important;
+        gap: 4px !important;
+        color: #ffffff !important;
     }
-    
-    /* Badges miniatures */
-    .zone-badges { gap: 5px !important; }
-    .bloc-badge { width: 45px !important; }
-    .img-badge { width: 40px !important; height: 40px !important; }
-    .label-badge { font-size: 7px !important; margin-top: 2px !important; }
-    
-    /* Langues - étoiles compactes */
-    .stars { font-size: 7px !important; }
-    .langue-item span:first-child { font-size: 9px !important; }
-    
-    /* Compétences - grille dense */
-    .grille-outils { 
-        display: grid !important; 
-        grid-template-columns: repeat(4, 1fr) !important; 
-        gap: 4px !important; 
+    .stars,
+    .stars i {
+        color: #f6ff00 !important;
+        text-shadow: none !important;
+        animation: none !important;
     }
-    .outil { 
-        padding: 4px 2px !important; 
-        border-radius: 4px !important; 
-        font-size: 7.5px !important;
-        background: #f0f0f0 !important;
+    .photo-profil img {
+        width: 76px !important;
+        height: 84px !important;
+        border-radius: 14px !important;
+        margin-bottom: 8px !important;
     }
-    .outil i { 
-        font-size: 14px !important; 
-        margin-bottom: 2px !important; 
+    .img-badge {
+        width: 34px !important;
     }
-    
-    /* Cartes formation/expérience ultra-compactes */
-    .carte { 
-        background: #fafafa !important; 
-        padding: 6px 8px !important; 
-        margin-bottom: 6px !important; 
-        border-radius: 4px !important;
-        border-left: 3px solid #0088cc !important;
+    .zone-badges {
+        gap: 5px !important;
     }
-    .entete-carte { 
-        display: flex !important; 
-        justify-content: space-between !important;
-        flex-wrap: wrap !important;
-        gap: 2px !important;
+    .label-badge {
+        color: #ffffff !important;
     }
-    .entete-carte strong { font-size: 10px !important; }
-    .date { 
-        background: #0088cc !important; 
-        color: white !important; 
-        padding: 1px 6px !important; 
-        border-radius: 10px !important; 
-        font-size: 7px !important; 
-        font-weight: bold !important;
-        white-space: nowrap !important;
+    /* ════════════════════════════════
+       COLONNE DROITE — fond blanc
+       ════════════════════════════════ */
+    #flux-principal {
+        width: 76% !important;
+        padding: 8px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 6px !important;
+        align-content: stretch !important;
+        height: 100% !important;
+        background: #ffffff !important;
+        color: #1f2933 !important;
     }
-    .entreprise { 
-        font-weight: 600 !important; 
-        font-size: 9px !important; 
-        margin: 2px 0 !important; 
-        color: #006699 !important;
+    .section-cv:first-child,
+    .section-cv:nth-child(2),
+    .section-cv:last-child {
+        grid-column: 1 / -1 !important;
     }
-    .carte > p:last-child { 
-        font-size: 9px !important; 
-        margin: 0 !important; 
+    #flux-principal h2,
+    .section-cv h2 {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+        padding-left: 8px !important;
+        border-left: 3px solid #0078b6 !important;
+        color: #1f2933 !important;
+    }
+    #flux-principal .section-cv > p,
+    #flux-principal .section-cv > p strong {
+        font-size: 12px !important;
         line-height: 1.2 !important;
+        color: #1f2933 !important;
     }
-    
-    /* Projets - grille 2 colonnes compacte */
-    .grille-projets { 
-        display: grid !important; 
-        grid-template-columns: 1fr 1fr !important; 
-        gap: 6px !important; 
-    }
-    .carte-projet { 
-        background: #fafafa !important; 
-        padding: 6px 8px !important; 
-        border-radius: 4px !important;
-        border-left: 3px solid #0088cc !important;
-    }
-    .carte-projet h4 { 
-        margin: 0 0 3px !important; 
-        font-size: 9.5px !important; 
-        color: #006699 !important; 
-    }
-    .carte-projet p { 
-        font-size: 8.5px !important; 
-        margin: 0 !important; 
-        line-height: 1.2 !important;
-    }
-    
-    /* Profil - texte justifié compact */
-    .section-cv p { 
-        margin: 0 0 4px !important; 
-        font-size: 9.5px !important; 
-        text-align: justify !important;
-        line-height: 1.25 !important;
-    }
-    
-    /* Éviter les coupures malvenues */
-    .section-cv, .carte { 
-        page-break-inside: avoid !important; 
+    /* ── CARTES Formations & Expériences ── */
+    .carte {
+        background: #eef3f8 !important;
+        padding: 6px !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+        transform: none !important;
+        margin-bottom: 4px !important;
+        border: 1px solid #d0dce8 !important;
         break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    .carte * {
+        color: #1f2933 !important;
+    }
+    .entete-carte {
+        margin-bottom: 2px !important;
+    }
+    .entete-carte h3 {
+        font-size: 12px !important;
+        margin-bottom: 2px !important;
+        color: #1f2933 !important;
+    }
+    .entreprise {
+        font-size: 12px !important;
+        color: #636e72 !important;
+    }
+    .date {
+        font-size: 12px !important;
+        padding: 2px 6px !important;
+        background: #0078b6 !important;
+        color: #ffffff !important;
+        border-radius: 20px !important;
+    }
+    /* ── CARTES PROJETS ── */
+    .carte-projet {
+        background: #eef3f8 !important;
+        padding: 6px !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+        transform: none !important;
+        border-bottom: 2px solid #0078b6 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    .carte-projet * {
+        color: #1f2933 !important;
+    }
+    .carte-projet h3 {
+        font-size: 12px !important;
+        margin-bottom: 2px !important;
+        color: #0078b6 !important;
+    }
+    .carte-projet p,
+    .equipe {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        color: #1f2933 !important;
+    }
+    /* ── OUTILS / COMPÉTENCES ── */
+    .grille-outils {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+    }
+    .outil {
+        padding: 3px 2px !important;
+        border-radius: 5px !important;
+        background: #eef3f8 !important;
+        text-align: center !important;
+    }
+    .outil i {
+        font-size: 12px !important;
+        color: #0078b6 !important;
+    }
+    .outil-label {
+        opacity: 1 !important;
+        font-size: 12px !important;
+        margin-top: 2px !important;
+        color: #1f2933 !important;
+    }
+    /* ── PROJETS GRILLE ── */
+    .grille-projets {
+        gap: 4px !important;
+        grid-template-rows: 1fr 1fr !important;
+        height: 100% !important;
+    }
+    .section-cv:last-child {
+        flex: 1 1 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .section-cv:last-child .grille-projets {
+        flex: 1 1 auto !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+        height: 100% !important;
+    }
+    .section-cv:last-child .carte-projet {
+        height: 100% !important;
+    }
+    /* ── ANTI-COUPURE ── */
+    .section-cv,
+    .carte,
+    .carte-projet,
+    .grille-projets,
+    .grille-outils,
+    .entete-carte {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    h2 {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
     }
 }
