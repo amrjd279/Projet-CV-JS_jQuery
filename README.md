@@ -7,7 +7,7 @@
 
 **Curriculum Vitae interactif et responsive développé en HTML/CSS/JavaScript**
 
-[Voir le CV](https://amrjd279.github.io/cv) • [Me contacter](#contact)
+[Voir le CV](https://amrjd279.github.io/Projet-CV-JS_jQuery/) • [Me contacter](#contact)
 
 </div>
 
