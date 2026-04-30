@@ -1,4 +1,4 @@
-# 💼 CV Interactif - Amr Jaddad
+# 💼 CV Interactif - 🇧🇪 Amr Jaddad 🇲🇦
 
 <div align="center">
 
@@ -116,8 +116,9 @@ CV/
 
 | Certification | Badge |
 |---------------|-------|
-| **CCNA** | <img src="IMG/badgeCCNA.png" alt="CCNA" width="50"> |
-| **IoT** | <img src="IMG/badgeIoT.png" alt="IoT" width="50"> |
+| **CCNA** | <img src="IMG/badgeCCNA.webp" alt="CCNA" width="50"> |
+| **Shindo Karatéka** | <img src="IMG/shindo.webp" alt="shindo" width="50"> |
+| **IoT** | <img src="IMG/badgeIoT.webp" alt="IoT" width="50"> |
 
 ---
 
