@@ -196,6 +196,11 @@
     // ===================================
     loadScript('https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js')
         .then(() => {
+            const titleEl = document.getElementById('typed-name');
+            if (titleEl) {
+                titleEl.setAttribute('aria-live', 'polite');
+            }
+
             new Typed('#typed-name', {
                 strings: [
                     'Amr Jaddad',
