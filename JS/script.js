@@ -42,14 +42,12 @@
             : enableDarkMode();
     });
 
-
     // ========
     // 3. PRINT
     // ========
     document.getElementById('btn-print')?.addEventListener('click', () => {
         window.print();
     });
-
 
     // =======================
     // 4. BARRE DE PROGRESSION
@@ -66,7 +64,6 @@
     };
 
     window.addEventListener('scroll', updateProgress);
-
 
     // =============
     // 5. ANIMATIONS
@@ -88,7 +85,6 @@
         observer.observe(el);
     });
 
-
     // ========================
     // 6. TEXTE SOUS LES ICÔNES
     // ========================
@@ -100,10 +96,12 @@
         'fa-php': 'PHP',
         'fa-database': 'SQL',
         'fa-js': 'JavaScript',
+        'fa-node-js': 'Node.js',
         'fa-java': 'Java',
         'fa-python': 'Python',
         'fa-react': 'React',
         'fa-network-wired': 'Réseau',
+        'fa-docker': 'Docker',
         'fa-file-word': 'Word',
         'fa-file-excel': 'Excel',
         'fa-file-powerpoint': 'PowerPoint'
@@ -175,6 +173,7 @@
     btnTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
     const loadScript = (src) => {
         return new Promise((resolve, reject) => {
             if (typeof Typed !== 'undefined') {
@@ -192,7 +191,7 @@
     };
 
     // ===================================
-    // 1. CHARGEMENT DYNAMIQUE DE TYPED.JS
+    // 8. ANIMATION DU TITRE TYPED.JS
     // ===================================
     loadScript('https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js')
         .then(() => {
@@ -203,7 +202,7 @@
 
             new Typed('#typed-name', {
                 strings: [
-                    'Amr Jaddad',
+                    'JADDAD Amr',
                     'Je transforme vos idées en sites performants'
                 ],
                 typeSpeed: 70,
@@ -216,7 +215,7 @@
         })
         .catch(() => {
             const nameEl = document.getElementById('typed-name');
-            if (nameEl) nameEl.textContent = 'Amr Jaddad';
+            if (nameEl) nameEl.textContent = 'JADDAD Amr';
         });
 
 });
